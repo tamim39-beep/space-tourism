@@ -1,0 +1,187 @@
+/* crew.css */
+
+.crew-page {
+  padding: 2rem 1.5rem;
+  min-height: 100vh;
+  padding: 60px 24px;
+  color: white;
+  margin: 0 auto;
+  font-family: "Barlow", sans-serif;
+  background-image: url("/assets/crew/background-crew-desktop.png");
+  background-size: cover;
+  background-repeat: no-repeat;
+  padding-top: 130px;
+  padding-left: 180px;
+}
+
+.crew-tabs .section-title {
+  font-family: "Bellefair", serif;
+  font-size: 0 1rem;
+  text-transform: uppercase;
+  margin-bottom: 2.5rem;
+  letter-spacing: 2.7px;
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.section-number {
+  font-weight: 700;
+  opacity: 0.25;
+  font-size: 2rem;
+}
+
+.crew-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  gap: 4rem;
+}
+
+.crew-image {
+  position: relative;
+  width: 600px;
+  height: 600px;
+  flex-shrink: 0;
+}
+
+.crew-img {
+  object-fit: contain;
+}
+
+.crew-content {
+  max-width: 450px;
+  text-align: left;
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.crew-tabs {
+  display: flex;
+  gap: 1rem;
+  margin-bottom: 1.5rem;
+}
+
+.crew-tabs .tab-button {
+  width: 15px;
+  height: 15px;
+  border-radius: 50%;
+  border: none;
+  background-color: gray;
+  cursor: pointer;
+  opacity: 0.4;
+  transition: opacity 0.3s, background-color 0.3s;
+}
+
+.crew-tabs .tab-button:hover {
+  opacity: 0.7;
+}
+
+.crew-tabs .tab-button.active {
+  background-color: white;
+  opacity: 1;
+}
+
+.crew-role {
+  font-family: "Barlow Condensed", sans-serif;
+  font-size: 1.25rem;
+  text-transform: uppercase;
+  opacity: 0.5;
+  margin-bottom: 0.5rem;
+}
+
+.crew-name {
+  font-family: "Bellefair", serif;
+  font-size: 2.5rem;
+  margin-bottom: 1rem;
+}
+
+.crew-bio {
+  font-family: "Barlow", sans-serif;
+  font-size: 1rem;
+  line-height: 1.6;
+  color: #d0d6f9;
+}
+
+/* Responsive */
+
+/* Responsive for mobile */
+@media (max-width: 768px) {
+  .crew-page {
+    padding: 120px 24px 40px;
+    background-image: url("/assets/Mobile - crew - A.png");
+    background-size: cover;
+    background-position: top center;
+    text-align: center;
+  }
+
+  .crew-tabs .section-title {
+    justify-content: center;
+    font-size: 1rem;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+  }
+
+  .section-number {
+    font-size: 1rem;
+  }
+
+  .crew-container {
+    flex-direction: column-reverse;
+    align-items: center;
+    gap: 2.5rem;
+  }
+
+  .crew-image {
+    width: 100%;
+    max-width: 100%;
+    display: flex;
+    justify-content: center;
+  }
+
+  .crew-img {
+    width: 70%;
+    height: auto;
+    object-fit: contain;
+  }
+
+  .crew-content {
+    max-width: 100%;
+    padding: 0 1rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1rem;
+  }
+
+  .crew-role {
+    font-size: 1rem;
+    text-transform: uppercase;
+    opacity: 0.5;
+  }
+
+  .crew-name {
+    font-size: 1.75rem;
+    font-family: "Bellefair", serif;
+    margin: 0;
+  }
+
+  .crew-bio {
+    font-size: 1rem;
+    line-height: 1.7;
+    color: #d0d6f9;
+  }
+
+  .crew-tabs {
+    justify-content: center;
+    margin: 1rem 0;
+    gap: 1rem;
+  }
+
+  .crew-tabs .tab-button {
+    width: 10px;
+    height: 10px;
+  }
+}

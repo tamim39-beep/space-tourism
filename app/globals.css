@@ -1,26 +1,281 @@
-@import "tailwindcss";
-
-:root {
-  --background: #ffffff;
-  --foreground: #171717;
+/* Base reset */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
 
-@theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
+body,
+html,
+#__next {
+  height: 100%;
+  font-family: "Barlow", sans-serif;
+  background-color: #0b0d17;
+  color: white;
+  overflow-x: hidden;
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
+/* Container utama full screen dengan background */
+.home-container {
+  min-height: 100vh;
+  background-image: url("/assets/background-home-desktop.jpg");
+  background-size: cover;
+  background-position: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 0 3rem;
+}
+
+/* Flex section untuk konten kiri dan button kanan */
+.home-content {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  max-width: 1000px;
+  width: 100%;
+}
+
+/* Konten kiri */
+.intro-text {
+  max-width: 500px;
+  text-align: left;
+}
+
+/* Typography */
+.heading-5 {
+  font-family: "Barlow Condensed", sans-serif;
+  font-weight: 400;
+  font-size: 1.25rem;
+  letter-spacing: 4.75px;
+  text-transform: uppercase;
+  color: #d0d6f9;
+  margin-bottom: 1rem;
+}
+
+.heading-1 {
+  font-family: "Bellefair", serif;
+  font-size: 6rem;
+  font-weight: 400;
+  margin-bottom: 1.5rem;
+  color: white;
+}
+
+.body-text {
+  font-family: "Barlow", sans-serif;
+  font-weight: 400;
+  font-size: 1.125rem;
+  line-height: 1.75;
+  color: #d0d6f9;
+}
+
+/* Konten kanan (button) */
+.explore-wrapper {
+  /* pastikan tombol ada di kanan */
+}
+
+/* Tombol bulat besar */
+.explore-button {
+  background-color: white;
+  color: #0b0d17;
+  font-family: "Bellefair", serif;
+  font-size: 2rem;
+  padding: 3.5rem 4.5rem;
+  border-radius: 50%;
+  border: none;
+  cursor: pointer;
+  width: 274px;
+  height: 274px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  box-shadow: 0 0 0 0 transparent;
+  transition: box-shadow 0.3s ease;
+}
+
+.explore-button:hover,
+.explore-button:focus {
+  box-shadow: 0 0 0 88px rgba(255, 255, 255, 0.1);
+  outline: none;
+}
+
+/* Responsive */
+@media (max-width: 1024px) {
+  .home-content {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .intro-text {
+    max-width: 100%;
+  }
+
+  .explore-button {
+    margin-top: 3rem;
+    width: 200px;
+    height: 200px;
+    font-size: 1.5rem;
+    padding: 2rem 2.5rem;
   }
 }
 
-body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+@media (max-width: 480px) {
+  .heading-1 {
+    font-size: 3.5rem;
+  }
+
+  .body-text {
+    font-size: 0.9rem;
+  }
+
+  .explore-button {
+    width: 150px;
+    height: 150px;
+    font-size: 1.2rem;
+    padding: 1.5rem 2rem;
+  }
+}
+
+/* === Navbar Styles === */
+.navbar {
+  position: absolute;
+  top: 2rem;
+  left: 0;
+  right: 0;
+  display: flex;
+  align-items: center;
+  padding: 0 3rem;
+  z-index: 100;
+}
+
+.logo img {
+  width: 48px;
+  height: 48px;
+}
+
+.line {
+  flex-grow: 1;
+  height: 1px;
+  background-color: rgba(255, 255, 255, 0.2);
+  margin: 0 3rem;
+}
+
+.nav-links {
+  display: flex;
+  gap: 2rem;
+  background-color: rgba(255, 255, 255, 0.04);
+  backdrop-filter: blur(20px);
+  padding: 1.5rem 4rem;
+}
+
+.nav-item {
+  color: white;
+  text-decoration: none;
+  font-family: "Barlow Condensed", sans-serif;
+  text-transform: uppercase;
+  font-size: 14px;
+  letter-spacing: 2.7px;
+  position: relative;
+  padding-bottom: 0.5rem;
+}
+
+.nav-index {
+  font-weight: bold;
+  margin-right: 0.25rem;
+}
+
+.nav-item.active::after {
+  content: "";
+  position: absolute;
+  bottom: -0.4rem;
+  left: 0;
+  right: 0;
+  height: 3px;
+  background-color: white;
+}
+
+/* === Hamburger Menu === */
+.hamburger {
+  display: none;
+  flex-direction: column;
+  gap: 6px;
+  background: none;
+  border: none;
+  cursor: pointer;
+  z-index: 999;
+}
+
+.hamburger .bar {
+  width: 24px;
+  height: 3px;
+  background-color: white;
+  transition: transform 0.3s ease, opacity 0.3s ease;
+}
+
+/* Hamburger animation */
+.hamburger .bar.open:nth-child(1) {
+  transform: translateY(6px) rotate(45deg);
+}
+.hamburger .bar.open:nth-child(2) {
+  opacity: 0;
+}
+.hamburger .bar.open:nth-child(3) {
+  transform: translateY(-6px) rotate(-45deg);
+}
+
+/* === Mobile Menu === */
+.mobile-nav {
+  display: none;
+}
+
+@media (max-width: 768px) {
+  .line {
+    display: none;
+  }
+
+  .nav-links {
+    display: none;
+  }
+
+  .hamburger {
+    display: flex;
+    position: absolute;
+    right: 2rem;
+    top: 2rem;
+  }
+
+  .mobile-nav {
+    display: flex;
+    position: fixed;
+    top: 0;
+    right: 0;
+    height: 100vh;
+    width: 70%;
+    background-color: rgba(255, 255, 255, 0.04);
+    backdrop-filter: blur(20px);
+    flex-direction: column;
+    padding: 6rem 2rem;
+    gap: 2rem;
+    z-index: 998;
+  }
+
+  .mobile-nav .nav-item {
+    font-family: "Barlow Condensed", sans-serif;
+    font-size: 1rem;
+    text-transform: uppercase;
+    text-decoration: none;
+    color: white;
+    letter-spacing: 2px;
+  }
+
+  .mobile-nav .nav-index {
+    font-weight: bold;
+    margin-right: 0.5rem;
+  }
+
+  .mobile-nav .nav-item.active::after {
+    display: none;
+  }
 }

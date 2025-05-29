@@ -1,0 +1,221 @@
+@import url("https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@400;700&family=Barlow:wght@400&family=Bellefair&display=swap");
+
+.destination-page {
+  min-height: 100vh;
+  padding: 60px 24px;
+  color: white;
+  background-image: url("/assets/background-destination-desktop.jpg");
+  background-size: cover;
+  background-repeat: no-repeat;
+  font-family: "Barlow", sans-serif;
+  padding-top: 130px;
+  padding-left: 180px;
+}
+
+.destination-tabs .section-title {
+  font-size: 20px;
+  letter-spacing: 4px;
+  text-transform: uppercase;
+  margin-bottom: 40px;
+  text-align: center;
+}
+
+.section-number {
+  color: gray;
+  font-weight: bold;
+  margin-right: 12px;
+}
+
+.destination-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 60px;
+  max-width: 1100px;
+  margin: 0 auto;
+}
+
+.destination-image {
+  width: 500px;
+  height: 500px;
+  position: relative;
+}
+
+.planet-img {
+  object-fit: contain;
+}
+
+.destination-content {
+  max-width: 500px;
+  text-align: center;
+}
+
+.destination-tabs {
+  display: flex;
+  justify-content: center;
+  gap: 24px;
+  margin-bottom: 24px;
+  margin-top: 60px;
+}
+
+.tab-button {
+  background: none;
+  border: none;
+  color: gray;
+  font-family: "Barlow Condensed", sans-serif;
+  text-transform: uppercase;
+  font-size: 14px;
+  letter-spacing: 2px;
+  padding-bottom: 8px;
+  border-bottom: 2px solid transparent;
+  cursor: pointer;
+}
+
+.tab-button:hover {
+  border-color: #555;
+}
+
+.tab-button.active {
+  border-color: white;
+  color: white;
+}
+
+.planet-name {
+  font-family: "Bellefair", serif;
+  font-size: 80px;
+  text-transform: uppercase;
+  margin: 0 0 20px;
+}
+
+.planet-description {
+  color: #ccc;
+  line-height: 1.8;
+  margin-bottom: 40px;
+}
+
+.divider {
+  border: none;
+  border-top: 1px solid #444;
+  margin: 30px 0;
+}
+
+.destination-stats {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.stat {
+  text-transform: uppercase;
+  font-family: "Barlow Condensed", sans-serif;
+  font-size: 14px;
+  letter-spacing: 2px;
+}
+
+.stat-label {
+  color: gray;
+  margin-bottom: 4px;
+}
+
+.stat-value {
+  font-size: 20px;
+  color: white;
+}
+
+.destination-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 60px;
+  max-width: 1100px;
+  margin: 0 auto;
+}
+
+.destination-image {
+  width: 380px;
+  height: 380px;
+}
+
+.planet-name {
+  font-size: 4.5rem;
+}
+
+@media (min-width: 768px) {
+  .destination-container {
+    flex-direction: row;
+    align-items: flex-start;
+    justify-content: space-between;
+    gap: 100px;
+  }
+}
+
+/* Tablet & kecil (1024px ke bawah) => layout kolom center */
+@media (max-width: 1024px) {
+  .destination-container {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    gap: 2.5rem;
+  }
+
+  .destination-image {
+    width: 300px;
+    height: 300px;
+  }
+
+  .destination-content {
+    max-width: 90%;
+  }
+
+  .planet-name {
+    font-size: 4rem;
+  }
+
+  .destination-stats {
+    justify-content: center;
+    gap: 3rem;
+  }
+}
+
+/* Mobile kecil (600px ke bawah) */
+@media (max-width: 600px) {
+  .destination-page {
+    padding: 2rem 1.5rem;
+    background-image: url("/assets/mobile - destination - A.png");
+  }
+
+  .section-title {
+    font-size: 1.25rem;
+    text-align: center;
+  }
+
+  .destination-image {
+    width: 170px;
+    height: 170px;
+  }
+
+  .planet-name {
+    font-size: 2.5rem;
+  }
+
+  .planet-description {
+    font-size: 0.95rem;
+  }
+
+  .tab-button {
+    font-size: 0.875rem;
+  }
+
+  .stat-label {
+    font-size: 0.75rem;
+  }
+
+  .stat-value {
+    font-size: 1.25rem;
+  }
+
+  .destination-stats {
+    flex-direction: column;
+    gap: 1.5rem;
+  }
+}

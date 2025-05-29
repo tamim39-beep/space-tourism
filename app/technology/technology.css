@@ -1,0 +1,156 @@
+/* technology.css */
+
+.technology-page {
+  padding: 2rem 1.5rem;
+  margin: 0 auto;
+  color: white;
+  font-family: "Barlow", sans-serif;
+  min-height: 100vh;
+  padding: 60px 24px;
+  background-image: url("/assets/technology/Hi Res Render - 4.png");
+  background-size: cover;
+  background-repeat: no-repeat;
+  padding-top: 130px;
+  padding-left: 180px;
+}
+
+.technology-tabs .section-title {
+  font-family: "Bellefair", serif;
+  font-size: 2rem;
+  text-transform: uppercase;
+  margin-bottom: 2.5rem;
+  letter-spacing: 2.7px;
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.section-number {
+  font-weight: 700;
+  opacity: 0.25;
+  font-size: 2rem;
+}
+
+.technology-container {
+  display: flex;
+  gap: 4rem;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.technology-content {
+  max-width: 450px;
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+  text-align: left;
+}
+
+.technology-tabs {
+  display: flex;
+  gap: 1rem;
+  margin-bottom: 1.5rem;
+}
+
+.technology-tabs .tab-button {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  border: 1px solid white;
+  background-color: transparent;
+  color: white;
+  font-family: "Bellefair", serif;
+  font-size: 1.25rem;
+  cursor: pointer;
+  opacity: 0.3;
+  transition: opacity 0.3s, background-color 0.3s, color 0.3s;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.technology-tabs .tab-button:hover {
+  opacity: 0.7;
+}
+
+.technology-tabs .tab-button.active {
+  background-color: white;
+  color: black;
+  opacity: 1;
+}
+
+.technology-term {
+  font-family: "Barlow Condensed", sans-serif;
+  font-size: 0.9rem;
+  letter-spacing: 2.7px;
+  color: #d0d6f9;
+  text-transform: uppercase;
+  margin-bottom: 0.25rem;
+}
+
+.technology-name {
+  font-family: "Bellefair", serif;
+  font-size: 2rem;
+  margin-bottom: 1rem;
+}
+
+.technology-description {
+  font-family: "Barlow", sans-serif;
+  font-size: 1rem;
+  line-height: 1.6;
+  color: #d0d6f9;
+}
+
+.technology-image {
+  flex-shrink: 0;
+  width: 450px;
+  height: 450px;
+  position: relative;
+}
+
+.technology-img {
+  width: 608px;
+  height: 734px;
+  object-fit: contain;
+  border-radius: 8px;
+}
+
+/* Responsive */
+
+@media (max-width: 768px) {
+  .technology-container {
+    flex-direction: column-reverse;
+    gap: 2rem;
+  }
+
+  .technology-image {
+    width: 100%;
+    height: 200px;
+  }
+
+  .technology-name {
+    font-size: 1.5rem;
+  }
+
+  .section-title {
+    justify-content: center;
+    font-size: 1.5rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .technology-image {
+    height: 150px;
+  }
+
+  .tab-button {
+    width: 40px;
+    height: 40px;
+    font-size: 1rem;
+  }
+
+  .technology-name {
+    font-size: 1.25rem;
+  }
+}
