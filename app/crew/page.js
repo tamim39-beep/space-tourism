@@ -2,7 +2,7 @@
 
 import { useState } from 'react';
 import Image from 'next/image';
-import '../crew/crew.css'
+import './crew.css';
 
 const crewMembers = [
   {
@@ -40,19 +40,21 @@ export default function CrewPage() {
           <Image
             src={member.image}
             alt={member.name}
-            fill
+            width={300}
+            height={300}
             className="crew-img"
+            style={{ objectFit: 'contain' }}
+            priority
           />
         </div>
 
         <div className="crew-content">
           <div className="crew-tabs">
-            {crewMembers.map((crew, index) => (
+            {crewMembers.map((_, index) => (
               <button
                 key={index}
                 onClick={() => setCurrent(index)}
-                className={`tab-button ${index === current ? 'active' : ''}`}
-                aria-label={`View ${crew.name} details`}
+                className={`tab-button ${current === index ? 'active' : ''}`}
               />
             ))}
           </div>

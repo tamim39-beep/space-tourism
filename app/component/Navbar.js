@@ -19,9 +19,9 @@ export default function Navbar() {
 
   return (
     <header className="navbar">
-      <div className="logo">
+      <Link href="/" className="logo">
         <img src="/assets/shared/logo.svg" alt="Logo" />
-      </div>
+      </Link>
 
       <div className="line" />
 
